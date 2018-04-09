@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    tools:context="com.example.user.aeroday2018.HeliBattle">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="70dp">
+
+        <LinearLayout
+            android:id="@+id/layout0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
+
+
+            android:id="@+id/Points_homologation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Points d'homologation :" />
+
+            <CheckBox
+                android:id="@+id/condition1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:checked="false"
+                android:text="Hélicoptère conçu par l'équipe participante (+10 pts)"
+                android:textColor="#079402"
+                tools:layout_editor_absoluteX="127dp"
+                tools:layout_editor_absoluteY="87dp" />
+
+            <CheckBox
+                android:id="@+id/condition2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Présentation d'un dossier technique : conception mécanique (+10 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Présentation d'un dossier technique : conception électronique (+10 pts)"
+                android:textColor="#079402" />
+
+
+            android:id="@+id/quitter_la_zone_de_départ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="quitter la zone de départ :" />
+
+            <CheckBox
+                android:id="@+id/condition4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="quitter la zone de départ (+5 pts)"
+                android:textColor="#079402" />
+
+
+            android:id="@+id/passage_par_le_trou_spatial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="passage par le trou spatial :" />
+
+            <CheckBox
+                android:id="@+id/condition5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Passage par un cerceau (+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="passage par deux cerceaux (+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher un cerceau (-3 pts)"
+                android:textColor="#bf0026" />
+
+
+            android:id="@+id/Tourner_autour_du_vaisseau_spatial"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tourner autour du vaisseau spatial :" />
+
+            <CheckBox
+                android:id="@+id/condition8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Effectuer un tour (+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Effectuer deux tours (+10 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Effectuer trois tours (+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Effectuer quatre tours (+20 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="effectuer cinq tours (+25 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher le vaisseau ou son support (-3 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher le vaisseau ou son support une deuxiéme fois (-3 pts)"
+                android:textColor="#bf0026" />
+
+
+            android:id="@+id/Atterissage_urgence"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atterissage d'urgence" />
+
+            <CheckBox
+                android:id="@+id/condition15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Atterissage avant la fin du signal d'urgence (+10 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Rater la limite du temps pour effectuer l'atterissage (-5 pts)"
+                android:textColor="#bf0026" />
+
+
+            android:id="@+id/Eviter_les_tentacules_du_Kraken"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Eviter les tentacules du Kraken :" />
+
+            <CheckBox
+                android:id="@+id/condition17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Passer au dessous d'un tentacule (+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="passer au dessus d'un tentacule (+7 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher un tentacule (-3 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher un tentacule pour la deuxiéme fois (-3 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher un tentacule pour la troisiéme fois (-3 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="dépasser la hauteur limite (-5 pts)"
+                android:textColor="#bf0026" />
+
+
+            android:id="@+id/atterissage_sur_bateau"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="atterrissage sur les bateaux" />
+
+            <CheckBox
+                android:id="@+id/condition23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Atterrissage sur un bateaux(+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Atterrissage sur les deux bateaux(+15 pts)"
+                android:textColor="#079402" />
+
+
+            android:id="@+id/se_stabiliser_dans_la_tempete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="se stabiliser dans la tempéte" />
+
+            <CheckBox
+                android:id="@+id/condition25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilisation pour 3 secondes(+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilisation pour 5 secondes(+10 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilisation pour 7 secondes(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilisation pour 10 secondes(+20 pts)"
+                android:textColor="#079402" />
+
+
+            android:id="@+id/atteindre_la_zone_d_arrivee"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atteindre la zone d'arrivée" />
+
+            <CheckBox
+                android:id="@+id/condition29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Lorsque l'hélicoptére se pose sur la zone d'arrivée (+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Si l'hélicoptére arrive à destination en premiére place(+5 pts)"
+                android:textColor="#079402" />
+
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pénalités :" />
+
+            <CheckBox
+                android:id="@+id/condition31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="l'hélicoptére endommage la maquette(-10pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére touche un élement ou un décor(-2 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére touche un élement ou un décor une deuxiéme fois(-2 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére touche un élement ou un décor une troisiéme fois(-2 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére touche un élement ou un décor une quatriéme fois(-2 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére touche un élement ou un décor une cinquiéme fois(-2 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages une deuxiéme fois(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages une troisiéme fois(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="si le participant actionne son hélicoptère avant le départ du challenge(-7 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Si l'hélicoptére perturbe le jeu de son adversaire(-10pts)"
+                android:textColor="#bf0026" />
+
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background2"
+                android:text="calculer le score" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
