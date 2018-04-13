@@ -44,7 +44,7 @@ public class details extends AppCompatActivity {
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
-    String toshow="";
+    //String toshow="";
     Button Bl ;
     final String Newligne=System.getProperty("line.separator");
 
@@ -67,7 +67,7 @@ public class details extends AppCompatActivity {
         if (details[1]) cont1+=("Présentation d'un dossier technique : conception mécanique  : +10 points"+Newligne) ;
         if (details[2]) cont1+=("Présentation d'un dossier technique : conception électronique  : +10 points"+Newligne) ;
         if (details[3]) cont2+=("Quitter la zone de départ  : +5 points"+Newligne) ;
-        if (details[4]) cont3+=("Passage oar un cerceau  : +5 points"+Newligne) ;
+        if (details[4]) cont3+=("Passage par un cerceau  : +5 points"+Newligne) ;
         if (details[5]) cont3+=("Passage par deux cerceaux  : +15 points"+Newligne) ;
         if (details[6]) cont3+=("Toucher un cerceau : -3 points"+Newligne) ;
         if (details[7]) cont4+=("Effectuer un tour : +5 points"+Newligne) ;

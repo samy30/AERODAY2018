@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/back2"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.aeroday2018.AeroChallenge">
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titre1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Points de pré-homologation" />
+
+            <CheckBox
+                android:id="@+id/condition1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="diamétre entre 250 mm et 300 mm(-20 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="diamétre entre 150mm et 250mm(-50 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="diamétre inférieur à 150mm(-70 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Hélice non protégée(-10 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Quitter la zone de départ :" />
+
+            <CheckBox
+                android:id="@+id/condition5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="quitter la zone de départ(+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="échec du premier essai du vol(-3 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher un élément du décor(-3 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Traverser l'atmosphére terrestre :" />
+
+            <CheckBox
+                android:id="@+id/condition8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/background_dark"
+                android:text="premier chemain: Support sans ballons " />
+
+            <CheckBox
+                android:id="@+id/condition9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Traverser le support(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher le support(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/black"
+                android:text="deuxiéme chemain: support avec des ballons :" />
+
+            <CheckBox
+                android:id="@+id/condition12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="traverser le support(+50 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher le support(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher un ballon(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="percer un ballon(-10 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Se Stabiliser au-dessus de la station d’espace internationale :" />
+
+            <CheckBox
+                android:id="@+id/condition16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilité pendant 7 sec au-dessus de la station d'espace internationale à une hauteur dépassant 40 cm(+10 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilité pendant 5 sec au-dessus de la station d'espace internationale à une hauteur dépassant 40 cm(+5 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilité pendant 7 sec au-dessus de la station d'éspace internationale à une hauteur ne dépassant pas 40 cm (+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Stabilité pendant 5 sec au-dessus de la station d'espace internationale à une hauteur ne dépassant pas 40 cm(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="toucher la station d'espace internationale(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tourner autour de la planète VENUS :" />
+
+            <CheckBox
+                android:id="@+id/condition21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Faire 2 tours(+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Faire un seul tour(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Aucun tour(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition24"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher la planète VENUS(-5  pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Dépasser la hauteur limite (900mm)(-10 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Effectuer un mouvement de ZIGZAG entre VENUS, MARS et JUPITER :" />
+
+            <CheckBox
+                android:id="@+id/condition26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Passer entre 3 Planètes(+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Passer entre 2 Planètes(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition28"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher une Planète(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Dépasser la hauteur limite (900mm)(-10 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Traverser le trou noir :" />
+
+            <CheckBox
+                android:id="@+id/condition30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone maintient son équilibre en survolant le ventilateur(+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Le drone perd son équilibre(-10 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/soustitre1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="        Pour sortir du trou noir :" />
+
+            <CheckBox
+                android:id="@+id/condition32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone traverse seulement le premier cerceau et sort latéralement(+20 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition33"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone traverse les deux premiers cerceaux et sort latéralement avant d'atteindre le dernier(+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone réussit à traverser les trois cerceaux(+50 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition35"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher un élément du trou noir(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tourner autour des anneaux de la planète SATURNE :" />
+
+            <CheckBox
+                android:id="@+id/condition36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Faire 3 tours(+30 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition37"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Faire 2 tours(+15 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition38"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Faire un tour(+5 pts)"
+                android:textColor="#079402"
+                tools:layout_editor_absoluteX="101dp"
+                tools:layout_editor_absoluteY="289dp" />
+
+            <CheckBox
+                android:id="@+id/condition39"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Aucun tour(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <CheckBox
+                android:id="@+id/condition40"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#bf0026"
+                android:text="Toucher les anneaux ou la planète en tournant(-5 pts)"
+                android:textColor="#bf0026" />
+
+            <TextView
+                android:id="@+id/titre9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Atterrir sur la zone d’arrivée : la planète SATURNE :" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustitre2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="durée en minutes :" />
+
+                <EditText
+                    android:id="@+id/duree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/titre10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remarques :" />
+
+            <CheckBox
+                android:id="@+id/condition41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone a été assemblé par le participant(+70 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition42"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Le drone a été obtenu par une impression 3D(+20 pts)"
+                android:textColor="#079402" />
+
+            <CheckBox
+                android:id="@+id/condition43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="#079402"
+                android:text="Poster technique(+10 pts)"
+                android:textColor="#079402" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/soustitre3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="nombre des collisions avec des objets différents de la map:" />
+
+                <EditText
+                    android:id="@+id/collision"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number" />
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_background2"
+                android:text="Calculer le score" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import java.io.IOException;
  */
 
 public class ConnectThread extends Thread {
-    private final BluetoothSocket mmSocket;
+/*    private final BluetoothSocket mmSocket;
     private final BluetoothDevice mmDevice;
 
     public ConnectThread(BluetoothDevice device) {
@@ -41,5 +41,5 @@ public class ConnectThread extends Thread {
         } catch (IOException e) { }
     }
 
-
+*/
 }

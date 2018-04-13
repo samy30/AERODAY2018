@@ -23,5 +23,14 @@ public class choix extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+
+        Button myButton2 = (Button)findViewById(R.id.button3);
+        myButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(choix.this,AeroChallenge.class);
+                startActivity(myIntent);
+            }
+        });
     }
 }
