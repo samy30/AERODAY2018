@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="diamétre entre 250 mm et 300 mm(-20 pts)"
+                android:text="Diamétre entre 250 mm et 300 mm(-20 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="diamétre entre 150mm et 250mm(-50 pts)"
+                android:text="Diamétre entre 150mm et 250mm(-50 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -45,7 +45,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="diamétre inférieur à 150mm(-70 pts)"
+                android:text="Diamétre inférieur à 150mm(-70 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="quitter la zone de départ(+5 pts)"
+                android:text="Quitter la zone de départ(+5 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="échec du premier essai du vol(-3 pts)"
+                android:text="Echec du premier essai du vol(-3 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher un élément du décor(-3 pts)"
+                android:text="Toucher un élément du décor(-3 pts)"
                 android:textColor="#bf0026" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@android:color/background_dark"
-                android:text="premier chemain: Support sans ballons " />
+                android:text="Premier chemain: Support sans ballons " />
 
             <CheckBox
                 android:id="@+id/condition9"
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher le support(-5 pts)"
+                android:text="Toucher le support(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -120,14 +120,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="@android:color/black"
-                android:text="deuxiéme chemain: support avec des ballons :" />
+                android:text="Deuxiéme chemin: support avec des ballons :" />
 
             <CheckBox
                 android:id="@+id/condition12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="traverser le support(+50 pts)"
+                android:text="Traverser le support(+50 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -135,7 +135,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher le support(-5 pts)"
+                android:text="Toucher le support(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -143,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher un ballon(-5 pts)"
+                android:text="Toucher un ballon(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -151,14 +151,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="percer un ballon(-10 pts)"
+                android:text="Percer un ballon(-10 pts)"
                 android:textColor="#bf0026" />
 
             <TextView
                 android:id="@+id/titre4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Se Stabiliser au-dessus de la station d’espace internationale :" />
+                android:text="Se stabiliser au-dessus de la station d’espace internationale :" />
 
             <CheckBox
                 android:id="@+id/condition16"
@@ -197,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher la station d'espace internationale(-5 pts)"
+                android:text="Toucher la station d'espace internationale(-5 pts)"
                 android:textColor="#bf0026" />
 
             <TextView
@@ -408,7 +408,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="durée en minutes :" />
+                    android:text="Durée en minutes :" />
 
                 <EditText
                     android:id="@+id/duree"
@@ -459,7 +459,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="nombre des collisions avec des objets différents de la map:" />
+                    android:text="Nombre des collisions avec des objets différents de la map:" />
 
                 <EditText
                     android:id="@+id/collision"

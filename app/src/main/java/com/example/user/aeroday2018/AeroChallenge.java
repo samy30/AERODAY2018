@@ -373,7 +373,7 @@ public class AeroChallenge extends AppCompatActivity {
                 }
 
                 storeArray(topass,"results2",dures,collisions,getApplicationContext());
-                Intent myIntent = new Intent(AeroChallenge.this,resultat.class);
+                Intent myIntent = new Intent(AeroChallenge.this,resultat2.class);
 
 
                 myIntent.putExtra(somme,sum);

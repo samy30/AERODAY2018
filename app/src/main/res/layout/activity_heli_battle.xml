@@ -73,14 +73,14 @@
                 android:id="@+id/titre2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="quitter la zone de départ :" />
+                android:text="Quitter la zone de départ :" />
 
             <CheckBox
                 android:id="@+id/condition4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="quitter la zone de départ (+5 pts)"
+                android:text="Quitter la zone de départ (+5 pts)"
                 android:textColor="#079402" />
 
 
@@ -93,7 +93,7 @@
                 android:id="@+id/titre3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="passage par le trou spatial :" />
+                android:text="Passage par le trou spatial :" />
 
             <CheckBox
                 android:id="@+id/condition5"
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="passage par deux cerceaux (+15 pts)"
+                android:text="Passage par deux cerceaux (+15 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -116,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher un cerceau (-3 pts)"
+                android:text="Toucher un cerceau (-3 pts)"
                 android:textColor="#bf0026" />
 
 
@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="effectuer cinq tours (+25 pts)"
+                android:text="Effectuer cinq tours (+25 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -240,7 +240,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="passer au dessus d'un tentacule (+7 pts)"
+                android:text="Passer au dessus d'un tentacule (+7 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -256,7 +256,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher un tentacule pour la deuxiéme fois (-3 pts)"
+                android:text="Toucher un tentacule pour la deuxième fois (-3 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -264,7 +264,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="toucher un tentacule pour la troisiéme fois (-3 pts)"
+                android:text="Toucher un tentacule pour la troisième fois (-3 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -272,7 +272,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="dépasser la hauteur limite (-5 pts)"
+                android:text="Dépasser la hauteur limite (-5 pts)"
                 android:textColor="#bf0026" />
 
 
@@ -313,7 +313,7 @@
                 android:id="@+id/titre8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="se stabiliser dans la tempéte" />
+                android:text="se stabiliser dans la tempête" />
 
             <CheckBox
                 android:id="@+id/condition25"
@@ -364,7 +364,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#079402"
-                android:text="Lorsque l'hélicoptére se pose sur la zone d'arrivée (+5 pts)"
+                android:text="Lorsque l'hélicoptère se pose sur la zone d'arrivée (+5 pts)"
                 android:textColor="#079402" />
 
             <CheckBox
@@ -391,7 +391,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="l'hélicoptére endommage la maquette(-10pts)"
+                android:text="L'hélicoptère endommage la maquette(-10pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -399,7 +399,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére touche un élement ou un décor(-2 pts)"
+                android:text="Si l'hélicoptère touche un élément ou un décor(-2 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -407,7 +407,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére touche un élement ou un décor une deuxiéme fois(-2 pts)"
+                android:text="Si l'hélicoptère touche un élement ou un décor une deuxième fois(-2 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -415,7 +415,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére touche un élement ou un décor une troisiéme fois(-2 pts)"
+                android:text="Si l'hélicoptère touche un élément ou un décor une troisième fois(-2 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -423,7 +423,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére touche un élement ou un décor une quatriéme fois(-2 pts)"
+                android:text="Si l'hélicoptère touche un élément ou un décor une quatrième fois(-2 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -431,7 +431,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére touche un élement ou un décor une cinquiéme fois(-2 pts)"
+                android:text="Si l'hélicoptère touche un élément ou un décor une cinquième fois(-2 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -439,7 +439,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages(-5 pts)"
+                android:text="Si l'hélicoptère effectue un atterrissage hors les zones d'atterrissages(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -447,7 +447,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages une deuxiéme fois(-5 pts)"
+                android:text="Si l'hélicoptère effectue un atterrissage hors les zones d'atterrissages une deuxième fois(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -455,7 +455,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si l'hélicoptére effectue un atterrissagehors les zones d'atterrissages une troisiéme fois(-5 pts)"
+                android:text="Si l'hélicoptère effectue un atterrissage hors les zones d'atterrissages une troisième fois(-5 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -463,7 +463,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="si le participant actionne son hélicoptère avant le départ du challenge(-7 pts)"
+                android:text="Si le participant actionne son hélicoptère avant le départ du challenge(-7 pts)"
                 android:textColor="#bf0026" />
 
             <CheckBox
@@ -471,7 +471,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:buttonTint="#bf0026"
-                android:text="Si l'hélicoptére perturbe le jeu de son adversaire(-10pts)"
+                android:text="Si l'hélicoptère perturbe le jeu de son adversaire(-10pts)"
                 android:textColor="#bf0026" />
 
 
