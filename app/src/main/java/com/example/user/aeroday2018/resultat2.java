@@ -20,7 +20,7 @@ public class resultat2 extends AppCompatActivity {
         Button myDetails =(Button)findViewById(R.id.details);
 
         Intent i = getIntent();
-        int somme = i.getIntExtra(HeliBattle.somme,0);
+        final int somme = i.getIntExtra(HeliBattle.somme,0);
         result.setText(String.valueOf(somme));
         final boolean[] details = i.getBooleanArrayExtra("details");
         final int duree =i.getIntExtra("duree",0);
@@ -34,6 +34,7 @@ public class resultat2 extends AppCompatActivity {
                 myIntent.putExtra("details",details);
                 myIntent.putExtra("duree",duree);
                 myIntent.putExtra("collision",collision);
+                myIntent.putExtra("somme",somme);
                 startActivity(myIntent);
             }
         });

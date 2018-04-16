@@ -5,8 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class details2 extends AppCompatActivity {
     String epreuve1 = "\nPoints de pré-homologation :\n" ;
@@ -19,20 +24,29 @@ public class details2 extends AppCompatActivity {
     String epreuve8 = "\nTourner autour des anneaux de la planète SATURNE :\n" ;
     String epreuve9 = "\nAtterrir sur la zone d'arrivée:la planète SATURNE :\n" ;
     String epreuve10 = "\nRemarques :\n" ;
+    String scori ="Score :";
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
     Button Bl ;
+    DatabaseReference myRef ;
+    String resultat ;
     final String Newligne=System.getProperty("line.separator");
-
+    int sum;
+    int collision ;
+    int duree ;
+    TextView resultat2 ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details2);
+        myRef = FirebaseDatabase.getInstance().getReference("scoresAerochallenge");
         Bl=(Button)findViewById(R.id.bluetooth);
+        resultat2 =(TextView)findViewById(R.id.score);
         Intent i =getIntent();
         final boolean[] details = i.getBooleanArrayExtra("details");
-        int duree=i.getIntExtra("duree",0);
+        duree=i.getIntExtra("duree",0);
+        sum =i.getIntExtra("somme",0);
         int r;
         Integer duree2=duree;
 
@@ -41,7 +55,7 @@ public class details2 extends AppCompatActivity {
         if(duree<180) r=36;
         else r=(36-Math.round((duree-180)/5));
         Integer r2=r;
-        int collision=i.getIntExtra("collision",0);
+        collision=i.getIntExtra("collision",0);
         Integer collision2=collision;
         Integer collision3=collision*5;
         if (details[0]) cont1+=("Diamétre entre 250mm et 300mm  : -20 points"+Newligne) ;
@@ -115,7 +129,31 @@ public class details2 extends AppCompatActivity {
         str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), x, x+epreuve10.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         TextView myText =(TextView)findViewById(R.id.myText);
-
+        resultat=sorti(details);
         myText.setText(str);
+        Integer s=sum;
+        resultat2.setText(scori+s.toString());
+        Bl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             addScore();
+            }
+        });
+    }
+
+    String sorti(boolean[] boo){
+        String resultat="";
+        for(int i=0;i<boo.length;i++){
+            if(boo[i]) resultat+='t';
+            else resultat+='f';
+        }
+        return (resultat);
+
+    }
+    void addScore(){
+        String id =myRef.push().getKey();
+        Score2 mScore =new Score2(resultat,sum,collision,duree);
+        myRef.child(id).setValue(mScore);
+        Toast.makeText(details2.this,"score added", Toast.LENGTH_LONG).show();
     }
 }

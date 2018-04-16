@@ -45,12 +45,14 @@ public class details extends AppCompatActivity {
     String epreuve8 = "\nSe stabiliser dans la tempète :\n" ;
     String epreuve9 = "\nAtteindre la zone d'arrivée :\n" ;
     String epreuve10 = "\nPénalités :\n" ;
+    String scori ="Score :";
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
     String resultat ;
     //String toshow="";
     Button Bl ;
+    TextView score ;
     int sum ;
     final String Newligne=System.getProperty("line.separator");
     DatabaseReference myRef ;
@@ -58,8 +60,8 @@ public class details extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        myRef = FirebaseDatabase.getInstance().getReference("scores");
-        Bl=(Button)findViewById(R.id.bluetooth);
+        myRef = FirebaseDatabase.getInstance().getReference("scoresHelibattle");
+        Bl=(Button)findViewById(R.id.bluetooth);score =(TextView)findViewById(R.id.score);
         Intent i =getIntent();
         sum=i.getIntExtra("sum",0);
         final boolean[] details = i.getBooleanArrayExtra("details");
@@ -143,6 +145,8 @@ public class details extends AppCompatActivity {
         TextView myText =(TextView)findViewById(R.id.myText);
 
             myText.setText(str);
+            Integer s = sum;
+            score.setText(scori+s.toString());
 
             Bl.setOnClickListener(new View.OnClickListener() {
                 @Override
