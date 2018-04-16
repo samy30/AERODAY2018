@@ -19,6 +19,9 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,6 +31,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Set;
+
 
 public class details extends AppCompatActivity {
 
@@ -44,24 +48,20 @@ public class details extends AppCompatActivity {
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
+    String resultat ;
     //String toshow="";
     Button Bl ;
+    int sum ;
     final String Newligne=System.getProperty("line.separator");
-
-    BluetoothAdapter bluetoothAdapter ;
-    private Set<BluetoothDevice> devices;
-    private  BroadcastReceiver bluetoothReceiver;
-
-
-
-
-
+    DatabaseReference myRef ;
         @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        myRef = FirebaseDatabase.getInstance().getReference("scores");
         Bl=(Button)findViewById(R.id.bluetooth);
         Intent i =getIntent();
+        sum=i.getIntExtra("sum",0);
         final boolean[] details = i.getBooleanArrayExtra("details");
         if (details[0]) cont1+=("Hélicoptère conçu par l'équipe participante  : +10 points"+Newligne) ;
         if (details[1]) cont1+=("Présentation d'un dossier technique : conception mécanique  : +10 points"+Newligne) ;
@@ -105,7 +105,7 @@ public class details extends AppCompatActivity {
         if (details[39]) cont10+=("Participant a actionné son hélicoptère avant le départ du challenge : -7 points"+Newligne) ;
         if (details[40]) cont10+=("L'hélicoptére a perturbé le jeu de son adversaire : -10 points"+Newligne) ;
 
-
+        resultat =sorti(details);
         tosend=epreuve1+cont1+epreuve2+cont2+epreuve3+cont3+epreuve4+cont4+epreuve5+cont5+epreuve6+cont6+epreuve7+cont7+epreuve8+cont8+epreuve9+cont9+epreuve10+cont10 ;
 
 
@@ -143,55 +143,31 @@ public class details extends AppCompatActivity {
         TextView myText =(TextView)findViewById(R.id.myText);
 
             myText.setText(str);
+
             Bl.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-                    if (bluetoothAdapter == null)
-                        Toast.makeText(getApplicationContext(), "Pas de Bluetooth", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(getApplicationContext(), "Avec Bluetooth", Toast.LENGTH_SHORT).show();
-
-
-
-                    if (!bluetoothAdapter.isEnabled()) {
-                        bluetoothAdapter.enable();
-                    }
-                    devices = bluetoothAdapter.getBondedDevices();
-                    for (BluetoothDevice blueDevice : devices) {
-                        Toast.makeText(getApplicationContext(), "Device = " + blueDevice.getName(), Toast.LENGTH_SHORT).show();
-                    }
-
-                    bluetoothReceiver = new BroadcastReceiver() {
-                        public void onReceive(Context context, Intent intent) {
-                            String action = intent.getAction();
-                            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                                Toast.makeText(getApplicationContext(), "New Device = " + device.getName(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    };
-                    IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-                    registerReceiver(bluetoothReceiver, filter);
-                    bluetoothAdapter.startDiscovery();
-
-                    Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-                    discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
-                    startActivity(discoverableIntent);
+                    addScore();
                 }
             });
 
+
         }
-    protected void onDestroy() {
-        super.onDestroy();
-        bluetoothAdapter.cancelDiscovery();
-        unregisterReceiver(bluetoothReceiver);
-    }
 
+        String sorti(boolean[] boo){
+            String resultat="";
+            for(int i=0;i<boo.length;i++){
+                if(boo[i]) resultat+='t';
+                else resultat+='f';
+            }
+            return (resultat);
 
-
-
-
-
+        }
+        void addScore(){
+            String id =myRef.push().getKey();
+            Score mScore =new Score(resultat,sum);
+            myRef.child(id).setValue(mScore);
+            Toast.makeText(details.this,"score added", Toast.LENGTH_LONG).show();
+        }
 }
 

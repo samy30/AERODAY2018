@@ -84,11 +84,11 @@ public class details2 extends AppCompatActivity {
         if (details[37]) cont8+=("Faire un tour : +5 points"+Newligne) ;
         if (details[38]) cont8+=("Aucun tour : -5 points"+Newligne) ;
         if (details[39]) cont8+=("Toucher les anneaux ou la planéte en tournant : -5 points"+Newligne) ;
-        cont9+=("Durée : "+duree2.toString()+" minutes : "+r2.toString()+" points"+Newligne);
+        cont9+=("Durée : "+duree2.toString()+" minutes : +"+r2.toString()+" points"+Newligne);
         if (details[40]) cont10+=("Le drone a été assemblé par le participant : +70 points"+Newligne) ;
         if (details[40]) cont10+=("Le drone a été obtenu par une impression 3D : +20 points"+Newligne) ;
         if (details[40]) cont10+=("Poster technique : +10 points"+Newligne) ;
-        cont10+=(collision2.toString()+"Collisions avec des objets différents de la map : "+collision3.toString()+" points"+Newligne);
+        cont10+=(collision2.toString()+" collisions avec des objets différents de la map : +"+collision3.toString()+" points"+Newligne);
 
         tosend=epreuve1+cont1+epreuve2+cont2+epreuve3+cont3+epreuve4+cont4+epreuve5+cont5+epreuve6+cont6+epreuve7+cont7+epreuve8+cont8+epreuve9+cont9+epreuve10+cont10 ;
 
