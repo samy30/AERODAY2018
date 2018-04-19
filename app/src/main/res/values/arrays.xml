@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <string-array name="players_array">
+        <item>Joueur 1</item>
+        <item>Joueur 2</item>
+        <item>Joueur 3</item>
+        <item>Joueur 4</item>
+        <item>Joueur 5</item>
+        <item>Joueur 6</item>
+        <item>Joueur 7</item>
+        <item>Joueur 8</item>
+        <item>Joueur 9</item>
+        <item>Joueur 10</item>
+        <item>Joueur 11</item>
+        <item>Joueur 12</item>
+        <item>Joueur 13</item>
+        <item>Joueur 14</item>
+        <item>Joueur 15</item>
+        <item>Joueur 16</item>
+        <item>Joueur 17</item>
+        <item>Joueur 18</item>
+        <item>Joueur 19</item>
+        <item>Joueur 20</item>
+    </string-array>
+</resources>

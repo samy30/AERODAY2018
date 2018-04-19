@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drone"
+    tools:context="com.example.user.aeroday2018.joueurAerochallenge">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/commencer2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="104dp"
+            android:background="@drawable/button_background" />
+
+        <Button
+            android:id="@+id/commencer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/button_background"
+            android:text="commencer" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

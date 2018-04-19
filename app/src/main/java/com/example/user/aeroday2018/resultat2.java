@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class resultat2 extends AppCompatActivity {
-
+String joueur;
+TextView intro ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +23,12 @@ public class resultat2 extends AppCompatActivity {
         Intent i = getIntent();
         final int somme = i.getIntExtra(HeliBattle.somme,0);
         result.setText(String.valueOf(somme));
+        joueur = i.getStringExtra("joueur");
         final boolean[] details = i.getBooleanArrayExtra("details");
         final int duree =i.getIntExtra("duree",0);
         final int collision=i.getIntExtra("collision",0);
-
+        intro=(TextView)findViewById(R.id.intro);
+        intro.setText("le score du "+joueur+" : ");
 
         myDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +38,7 @@ public class resultat2 extends AppCompatActivity {
                 myIntent.putExtra("duree",duree);
                 myIntent.putExtra("collision",collision);
                 myIntent.putExtra("somme",somme);
+                myIntent.putExtra("joueur",joueur);
                 startActivity(myIntent);
             }
         });

@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.aeroday2018">
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
@@ -24,7 +22,9 @@
         <activity android:name=".details" />
         <activity android:name=".AeroChallenge" />
         <activity android:name=".details2" />
-        <activity android:name=".resultat2"></activity>
+        <activity android:name=".resultat2" />
+        <activity android:name=".joueurHelibattle" />
+        <activity android:name=".joueurAerochallenge"></activity>
     </application>
 
 </manifest>

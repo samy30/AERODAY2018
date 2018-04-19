@@ -19,7 +19,7 @@ public class choix extends AppCompatActivity {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(choix.this,HeliBattle.class);
+                Intent myIntent = new Intent(choix.this,joueurHelibattle.class);
                 startActivity(myIntent);
             }
         });
@@ -28,7 +28,7 @@ public class choix extends AppCompatActivity {
         myButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(choix.this,AeroChallenge.class);
+                Intent myIntent = new Intent(choix.this,joueurAerochallenge.class);
                 startActivity(myIntent);
             }
         });

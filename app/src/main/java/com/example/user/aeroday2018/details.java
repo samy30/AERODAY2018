@@ -45,14 +45,16 @@ public class details extends AppCompatActivity {
     String epreuve8 = "\nSe stabiliser dans la tempète :\n" ;
     String epreuve9 = "\nAtteindre la zone d'arrivée :\n" ;
     String epreuve10 = "\nPénalités :\n" ;
-    String scori ="Score :";
+    String scori ="Score du ";
+    String joueur ;
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
     String resultat ;
-    //String toshow="";
+    String topc="";
     Button Bl ;
     TextView score ;
+    SpannableStringBuilder str ;
     int sum ;
     final String Newligne=System.getProperty("line.separator");
     DatabaseReference myRef ;
@@ -64,6 +66,7 @@ public class details extends AppCompatActivity {
         Bl=(Button)findViewById(R.id.bluetooth);score =(TextView)findViewById(R.id.score);
         Intent i =getIntent();
         sum=i.getIntExtra("sum",0);
+        joueur = i.getStringExtra("joueur");
         final boolean[] details = i.getBooleanArrayExtra("details");
         if (details[0]) cont1+=("Hélicoptère conçu par l'équipe participante  : +10 points"+Newligne) ;
         if (details[1]) cont1+=("Présentation d'un dossier technique : conception mécanique  : +10 points"+Newligne) ;
@@ -115,7 +118,7 @@ public class details extends AppCompatActivity {
 
 
 
-            SpannableStringBuilder str = new SpannableStringBuilder(tosend);
+            str = new SpannableStringBuilder(tosend);
             int x=0;
             str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), x, x+epreuve1.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             x+=(epreuve1.length()+cont1.length());
@@ -146,7 +149,9 @@ public class details extends AppCompatActivity {
 
             myText.setText(str);
             Integer s = sum;
-            score.setText(scori+s.toString());
+            score.setText(scori+joueur+" : "+s.toString());
+            topc="<b>"+scori+joueur+" : "+s.toString()+"</b>"+"<br>"+"<b>"+epreuve1+"</b>"+"<br>"+cont1+"<br>"+"<b>"+epreuve2+"</b>"+"<br>"+cont2+"<b>"+"<b>"+epreuve3+"</b>"+"<br>"+cont3+"<br>"+"<b>"+epreuve4+"</b>"+"<br>"+cont4+"<br>"+"<b>"+epreuve5+"</b>"+"<br>"+cont5+"<br>"+"<b>"+epreuve6+"</b>"+"<br>"+cont6+"<br>"+"<b>"+epreuve7+"</b>"+"<br>"+cont7+"<br>"+"<b>"+epreuve8+"</b>"+"<br>"+cont8+"<br>"+"<b>"+epreuve9+"</b>"+"<br>"+cont9+"<br>"+"<b>"+epreuve10+"</b>"+"<br>"+cont10 ;
+
 
             Bl.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -168,9 +173,9 @@ public class details extends AppCompatActivity {
 
         }
         void addScore(){
-            String id =myRef.push().getKey();
-            Score mScore =new Score(resultat,sum);
-            myRef.child(id).setValue(mScore);
+            //String id =myRef.push().getKey();
+            Score mScore =new Score(topc,sum);
+            myRef.child(joueur).setValue(mScore);
             Toast.makeText(details.this,"score added", Toast.LENGTH_LONG).show();
         }
 }

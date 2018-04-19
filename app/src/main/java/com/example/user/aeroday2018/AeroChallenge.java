@@ -12,6 +12,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -20,16 +21,22 @@ public class AeroChallenge extends AppCompatActivity {
     public static final String somme="";
     public boolean[] topass = new boolean[43] ;
     SharedPreferences prefs ;
+    Intent in ;
+    String joueur ;
+    Button coll ;
+    int nbrecollision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         prefs = getApplicationContext().getSharedPreferences("preferencename", MODE_PRIVATE);
         setContentView(R.layout.activity_aero_challenge);
+        in=getIntent();
+        joueur = in.getStringExtra("joueur");
         ScrollView myScrollView = (ScrollView)findViewById(R.id.scroll);
         LinearLayout myLayout =(LinearLayout)findViewById(R.id.layout0);
         final EditText duree=(EditText)findViewById(R.id.duree);
-        final EditText collision=(EditText)findViewById(R.id.collision);
+        final EditText collision=(EditText) findViewById(R.id.collision);
         final ArrayList<CheckBox> myTable = new ArrayList<CheckBox>();
         myTable.add((CheckBox)findViewById(R.id.condition1));
         myTable.add((CheckBox)findViewById(R.id.condition2));
@@ -75,10 +82,13 @@ public class AeroChallenge extends AppCompatActivity {
         myTable.add((CheckBox)findViewById(R.id.condition42));
         myTable.add((CheckBox)findViewById(R.id.condition43));
 
-        if(prefs.contains("results2_size")) {
-            topass = loadArray("results2", getApplicationContext());
+        if(prefs.contains("results2"+joueur+"_size")) {
+            topass = loadArray("results2"+joueur, getApplicationContext());
             duree.setText(prefs.getString("duree",""));
-            collision.setText(prefs.getString("collision",""));
+           nbrecollision=prefs.getInt("collision",0);
+
+         Integer a=nbrecollision;
+            collision.setText(a.toString());
             for(int i=0;i<topass.length;i++) {
 
 
@@ -87,13 +97,20 @@ public class AeroChallenge extends AppCompatActivity {
             }
         }
 
+        if(!myTable.get(4).isChecked()){
+            for(int i=5;i<myTable.size()-3;i++){
+                myTable.get(i).setClickable(false);
+            }
+
+        }
+
 
         myTable.get(0).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(1).setChecked(false);
-                    myTable.get(2).setChecked(false);
+                {myTable.get(1).setChecked(false);
+                    myTable.get(2).setChecked(false);}
             }
         });
 
@@ -101,8 +118,8 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(0).setChecked(false);
-                myTable.get(2).setChecked(false);
+                {myTable.get(0).setChecked(false);
+                myTable.get(2).setChecked(false);}
             }
         });
 
@@ -110,8 +127,37 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(0).setChecked(false);
-                myTable.get(1).setChecked(false);
+                {myTable.get(0).setChecked(false);
+                myTable.get(1).setChecked(false);}
+            }
+        });
+
+        myTable.get(4).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(!isChecked){
+                    for(int i=5;i<8;i++){
+                        myTable.get(i).setChecked(false);
+                        myTable.get(i).setClickable(false);
+                    }
+                    myTable.get(10).setChecked(false);
+                    myTable.get(10).setClickable(false);
+
+                    for(int i=15;i<8;i++){
+                        myTable.get(i).setChecked(false);
+                        myTable.get(i).setClickable(false);
+                    }
+                }
+                if(isChecked){
+                    for(int i=5;i<8;i++){
+                        myTable.get(i).setClickable(true);
+                    }
+                    myTable.get(10).setClickable(true);
+
+                    for(int i=15;i<8;i++){
+                        myTable.get(i).setClickable(true);
+                    }
+                }
             }
         });
 
@@ -119,7 +165,7 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(10).setChecked(false);
+                { myTable.get(10).setChecked(false);
                 myTable.get(11).setClickable(false);
                 myTable.get(12).setClickable(false);
                 myTable.get(13).setClickable(false);
@@ -129,8 +175,12 @@ public class AeroChallenge extends AppCompatActivity {
                 myTable.get(13).setChecked(false);
                 myTable.get(14).setChecked(false);
                 myTable.get(8).setClickable(true);
-                myTable.get(9).setClickable(true);
+                myTable.get(9).setClickable(true);}
 
+                if(!isChecked){
+                    myTable.get(8).setClickable(false);
+                    myTable.get(9).setClickable(false);
+                }
 
             }
         });
@@ -139,7 +189,7 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(7).setChecked(false);
+                { myTable.get(7).setChecked(false);
                 myTable.get(8).setClickable(false);
                 myTable.get(9).setClickable(false);
                 myTable.get(8).setChecked(false);
@@ -147,7 +197,15 @@ public class AeroChallenge extends AppCompatActivity {
                 myTable.get(11).setClickable(true);
                 myTable.get(12).setClickable(true);
                 myTable.get(13).setClickable(true);
-                myTable.get(14).setClickable(true);
+                myTable.get(14).setClickable(true);}
+
+                if(!isChecked){
+                    myTable.get(11).setClickable(false);
+                    myTable.get(12).setClickable(false);
+                    myTable.get(13).setClickable(false);
+                    myTable.get(14).setClickable(false);
+
+                }
             }
         });
 
@@ -155,36 +213,36 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(16).setChecked(false);
+                { myTable.get(16).setChecked(false);
                 myTable.get(17).setChecked(false);
-                myTable.get(18).setChecked(false);
+                myTable.get(18).setChecked(false);}
             }
         });
         myTable.get(16).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(15).setChecked(false);
+                { myTable.get(15).setChecked(false);
                 myTable.get(17).setChecked(false);
-                myTable.get(18).setChecked(false);
+                myTable.get(18).setChecked(false);}
             }
         });
         myTable.get(17).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(15).setChecked(false);
+                { myTable.get(15).setChecked(false);
                 myTable.get(16).setChecked(false);
-                myTable.get(18).setChecked(false);
+                myTable.get(18).setChecked(false);}
             }
         });
         myTable.get(18).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(15).setChecked(false);
+                {  myTable.get(15).setChecked(false);
                 myTable.get(16).setChecked(false);
-                myTable.get(17).setChecked(false);
+                myTable.get(17).setChecked(false);}
             }
         });
 
@@ -192,24 +250,24 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(21).setChecked(false);
-                myTable.get(22).setChecked(false);
+                { myTable.get(21).setChecked(false);
+                myTable.get(22).setChecked(false);}
             }
         });
         myTable.get(21).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(20).setChecked(false);
-                myTable.get(22).setChecked(false);
+                {   myTable.get(20).setChecked(false);
+                myTable.get(22).setChecked(false);}
             }
         });
         myTable.get(22).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(20).setChecked(false);
-                myTable.get(21).setChecked(false);
+                {myTable.get(20).setChecked(false);
+                myTable.get(21).setChecked(false);}
             }
         });
 
@@ -247,24 +305,24 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(32).setChecked(false);
-                myTable.get(33).setChecked(false);
+                { myTable.get(32).setChecked(false);
+                myTable.get(33).setChecked(false);}
             }
         });
         myTable.get(32).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(31).setChecked(false);
-                myTable.get(33).setChecked(false);
+                { myTable.get(31).setChecked(false);
+                myTable.get(33).setChecked(false);}
             }
         });
         myTable.get(33).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(31).setChecked(false);
-                myTable.get(32).setChecked(false);
+                { myTable.get(31).setChecked(false);
+                myTable.get(32).setChecked(false);}
             }
         });
 
@@ -272,36 +330,50 @@ public class AeroChallenge extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(36).setChecked(false);
+                { myTable.get(36).setChecked(false);
                 myTable.get(37).setChecked(false);
-                myTable.get(38).setChecked(false);
+                myTable.get(38).setChecked(false);}
             }
         });
         myTable.get(36).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(35).setChecked(false);
+                { myTable.get(35).setChecked(false);
                 myTable.get(37).setChecked(false);
-                myTable.get(38).setChecked(false);
+                myTable.get(38).setChecked(false);}
             }
         });
         myTable.get(37).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(35).setChecked(false);
+                { myTable.get(35).setChecked(false);
                 myTable.get(36).setChecked(false);
-                myTable.get(38).setChecked(false);
+                myTable.get(38).setChecked(false);}
             }
         });
         myTable.get(38).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if(isChecked)
-                    myTable.get(35).setChecked(false);
+                { myTable.get(35).setChecked(false);
                 myTable.get(36).setChecked(false);
-                myTable.get(37).setChecked(false);
+                myTable.get(37).setChecked(false);}
+            }
+        });
+        coll =(Button)findViewById(R.id.coll);
+        coll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try{nbrecollision=Integer.parseInt(collision.getText().toString());}
+                catch (Exception e){
+                }
+                nbrecollision+=1;
+
+                Integer a =nbrecollision;
+                //coll.setText(a.toString()+"collisions");
+                collision.setText(a.toString());
             }
         });
 
@@ -358,21 +430,20 @@ public class AeroChallenge extends AppCompatActivity {
                 String dures=String.valueOf(duree.getText());
                 int dure=0;
                 try {dure =Integer.parseInt(dures);
-                if(dure<180) sum+=36;
-                else sum +=(36-Math.round((dure-180)/5));}
+                if(dure<120) sum+=60;
+                else sum +=(60-Math.round((dure-120)/2));}
                 catch (Exception e){};
                 String collisions=String.valueOf(collision.getText());
-                int nbrecollision=0;
-                try{nbrecollision = Integer.parseInt(collisions);
-                sum-=5*nbrecollision;}
-                catch (Exception e){};
+               //try{nbrecollision = Integer.parseInt(collisions);
+                sum-=5*nbrecollision;
+               //catch (Exception e){};
 
                 for(int i=0;i<myTable.size();i++){
                     if (myTable.get(i).isChecked()) topass[i]=true;
                     else topass[i]=false;
                 }
 
-                storeArray(topass,"results2",dures,collisions,getApplicationContext());
+                storeArray(topass,"results2"+joueur,dures,nbrecollision,getApplicationContext());
                 Intent myIntent = new Intent(AeroChallenge.this,resultat2.class);
 
 
@@ -380,18 +451,19 @@ public class AeroChallenge extends AppCompatActivity {
                 myIntent.putExtra("details",topass);
                 myIntent.putExtra("duree",dure);
                 myIntent.putExtra("collision",nbrecollision);
+                myIntent.putExtra("joueur",joueur);
                 startActivity(myIntent);
             }
         });
     }
 
-    public boolean storeArray(boolean[] array, String arrayName,String x,String y, Context mContext) {
+    public boolean storeArray(boolean[] array, String arrayName,String x,int y, Context mContext) {
 
         //prefs = mContext.getSharedPreferences("preferencename", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt(arrayName +"_size", array.length);
         editor.putString("duree",x);
-        editor.putString("collision",y);
+        editor.putInt("collision",y);
         for(int i=0;i<array.length;i++)
             editor.putBoolean(arrayName + "_" + i, array[i]);
 

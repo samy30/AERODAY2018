@@ -20,10 +20,13 @@ public class HeliBattle extends AppCompatActivity {
     public static final String somme="";
     public boolean[] topass = new boolean[41] ;
     SharedPreferences prefs ;
+    Intent intent;
+    String joueur ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        intent = getIntent();
+        joueur = intent.getStringExtra("joueur");
         prefs = getApplicationContext().getSharedPreferences("preferencename", MODE_PRIVATE);
         setContentView(R.layout.activity_heli_battle);
         ScrollView myScrollView = (ScrollView)findViewById(R.id.scroll);
@@ -70,14 +73,22 @@ public class HeliBattle extends AppCompatActivity {
         myTable.add((CheckBox)findViewById(R.id.condition39));
         myTable.add((CheckBox)findViewById(R.id.condition40));
         myTable.add((CheckBox)findViewById(R.id.condition41));
-        if(prefs.contains("results_size")) {
-            topass = loadArray("results", getApplicationContext());
+        if(prefs.contains("results"+joueur+"_size")) {
+
+            topass = loadArray("results"+joueur, getApplicationContext());
        for(int i=0;i<topass.length;i++) {
 
 
             if (topass[i]) myTable.get(i).setChecked(true);
             else myTable.get(i).setChecked(false);
         }
+        }
+
+        if(!myTable.get(3).isChecked()){
+            for(int i=4;i<myTable.size();i++){
+                myTable.get(i).setClickable(false);
+            }
+
         }
 
 
@@ -97,6 +108,23 @@ public class HeliBattle extends AppCompatActivity {
                   myTable.get(5).setChecked(false);
               }
           });
+
+        myTable.get(3).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(!isChecked){
+                    for(int i=5;i<myTable.size();i++){
+                        myTable.get(i).setChecked(false);
+                        myTable.get(i).setClickable(false);
+                    }
+                }
+                if(isChecked){
+                    for(int i=5;i<myTable.size();i++){
+                        myTable.get(i).setClickable(true);
+                    }
+                }
+            }
+        });
 
 
           myTable.get(7).setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -295,7 +323,7 @@ public class HeliBattle extends AppCompatActivity {
                     else topass[i]=false;
 
                 }
-                storeArray(topass,"results",getApplicationContext());
+                storeArray(topass,"results"+joueur,getApplicationContext());
 
 
 
@@ -304,6 +332,7 @@ public class HeliBattle extends AppCompatActivity {
 
                 myIntent.putExtra(somme,sum);
                 myIntent.putExtra("details",topass);
+                myIntent.putExtra("joueur",joueur);
                 startActivity(myIntent);
 
 

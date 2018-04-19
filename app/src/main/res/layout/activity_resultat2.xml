@@ -16,13 +16,12 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/text"
+            android:id="@+id/intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="Le score est : "
             android:textAlignment="center"
-            android:textSize="60sp" />
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/result"

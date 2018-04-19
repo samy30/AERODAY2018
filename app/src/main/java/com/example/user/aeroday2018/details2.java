@@ -24,7 +24,9 @@ public class details2 extends AppCompatActivity {
     String epreuve8 = "\nTourner autour des anneaux de la planète SATURNE :\n" ;
     String epreuve9 = "\nAtterrir sur la zone d'arrivée:la planète SATURNE :\n" ;
     String epreuve10 = "\nRemarques :\n" ;
-    String scori ="Score :";
+    String scori ="Score ";
+    String joueur ;
+    String topc ="";
 
     String cont1="",cont2="",cont3="",cont4="",cont5="",cont6="",cont7="",cont8="",cont9="",cont10="";
     String tosend="";
@@ -47,6 +49,7 @@ public class details2 extends AppCompatActivity {
         final boolean[] details = i.getBooleanArrayExtra("details");
         duree=i.getIntExtra("duree",0);
         sum =i.getIntExtra("somme",0);
+        joueur =i.getStringExtra("joueur");
         int r;
         Integer duree2=duree;
 
@@ -106,6 +109,7 @@ public class details2 extends AppCompatActivity {
 
         tosend=epreuve1+cont1+epreuve2+cont2+epreuve3+cont3+epreuve4+cont4+epreuve5+cont5+epreuve6+cont6+epreuve7+cont7+epreuve8+cont8+epreuve9+cont9+epreuve10+cont10 ;
 
+
         SpannableStringBuilder str = new SpannableStringBuilder(tosend);
         int x=0;
         str.setSpan(new android.text.style.StyleSpan(android.graphics.Typeface.BOLD), x, x+epreuve1.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -132,7 +136,9 @@ public class details2 extends AppCompatActivity {
         resultat=sorti(details);
         myText.setText(str);
         Integer s=sum;
-        resultat2.setText(scori+s.toString());
+        resultat2.setText(scori+joueur+" : "+s.toString());
+        topc="<b>"+scori+joueur+" : "+s.toString()+"</b>"+"<br>"+"<b>"+epreuve1+"</b>"+"<br>"+cont1+"<br>"+"<b>"+epreuve2+"</b>"+"<br>"+cont2+"<br>"+"<b>"+epreuve3+"</b>"+"<br>"+cont3+"<br>"+"<b>"+epreuve4+"</b>"+"<br>"+cont4+"<br>"+"<b>"+epreuve5+"</b>"+"<br>"+cont5+"<br>"+"<b>"+epreuve6+"</b>"+"<br>"+cont6+"<br>"+"<b>"+epreuve7+"</b>"+"<br>"+cont7+"<br>"+"<b>"+epreuve8+"</b>"+"<br>"+cont8+"<br>"+"<b>"+epreuve9+"</b>"+"<br>"+cont9+"<b>"+"<br>"+epreuve10+"</b>"+"<br>"+cont10+"<br>" ;
+
         Bl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,9 +157,9 @@ public class details2 extends AppCompatActivity {
 
     }
     void addScore(){
-        String id =myRef.push().getKey();
-        Score2 mScore =new Score2(resultat,sum,collision,duree);
-        myRef.child(id).setValue(mScore);
+        //String id =myRef.push().getKey();
+        Score2 mScore =new Score2(topc,sum,collision,duree);
+        myRef.child(joueur).setValue(mScore);
         Toast.makeText(details2.this,"score added", Toast.LENGTH_LONG).show();
     }
 }
