@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AERODAY 2018</title>
+</head>
+<body>
+<select id="joueur">
+    <option value="Joueur 1">joueur1</option>
+    <option value="Joueur 2">joueur2</option>
+    <option value="Jouaur 3">joueur3</option>
+    <option value="Joueur 4">joueur4</option>
+    <option value="Joueur 5">joueur5</option>
+    <option value="Joueur 6">joueur6</option>
+    <option value="Joueur 7">joueur7</option>
+    <option value="Joueur 8">joueur8</option>
+    <option value="Jouaur 9">joueur9</option>
+    <option value="Joueur 10">joueur10</option>
+    <option value="Joueur 11">joueur11</option>
+    <option value="Joueur 12">joueur12</option>
+    <option value="Jouaur 13">joueur13</option>
+    <option value="Joueur 14">joueur14</option>
+    <option value="Joueur 15">joueur15</option>
+    <option value="Joueur 16">joueur16</option>
+    <option value="Joueur 17">joueur17</option>
+    <option value="Joueur 18">joueur18</option>
+    <option value="Jouaur 19">joueur19</option>
+    <option value="Joueur 20">joueur20</option>
+</select>
+
+<select id="challenge">
+    <option value="Helibattle">Helibattle</option>
+    <option value="AeroChallenge">AeroChallenge</option>
+</select>
+<button id="sub" onclick="affiche()">resultat</button>
+<h1 id="tit"></h1>
+<p id="tex"></p>
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyC6pbWO4Y93Bw7dxKOCvjSrJd4n65OfPe4",
+        authDomain: "aeroday-2018.firebaseapp.com",
+        databaseURL: "https://aeroday-2018.firebaseio.com",
+        projectId: "aeroday-2018",
+        storageBucket: "aeroday-2018.appspot.com",
+        messagingSenderId: "200057051309"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="reception.js"></script>
+</body>
+</html>
