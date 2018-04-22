@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css" />
     <title>AERODAY 2018</title>
 </head>
-<body>
+
+<body background="images/aeroday.jpg" style=" background-size: 115% 660px;  background-repeat: no-repeat; opacity: 0.9 ;"  >
+
+    <fieldset id="field"  >
 <select id="joueur">
     <option value="Joueur 1">joueur1</option>
     <option value="Joueur 2">joueur2</option>
@@ -29,7 +33,7 @@
 </select>
 
 <select id="challenge">
-    <option value="Helibattle">Helibattle</option>
+    <option value="Helibattle" >Helibattle</option>
     <option value="AeroChallenge">AeroChallenge</option>
 </select>
 <button id="sub" onclick="affiche()">resultat</button>
@@ -51,5 +55,6 @@
 </script>
 
 <script src="reception.js"></script>
+</fieldset>
 </body>
 </html>
